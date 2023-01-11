@@ -1,1 +1,1 @@
-"# text_to_image  using Stable defusion HuggingFace" 
+# text_to_image  using Stable defusion HuggingFace
