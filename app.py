@@ -12,14 +12,15 @@ from diffusers import StableDiffusionPipeline
 
 # Create the app
 app = tk.Tk()
+root = ctk.CTk()
 app.geometry("532x632")
 app.title("Stable Bud") 
 ctk.set_appearance_mode("dark") 
 
-prompt = ctk.CTkEntry(height=40, width=512, text_font=("Arial", 20), text_color="black", fg_color="white") 
+prompt = ctk.CTkEntry(master=root,height=40, width=512, text_color="black", fg_color="white") 
 prompt.place(x=10, y=10)
 
-lmain = ctk.CTkLabel(height=512, width=512)
+lmain = ctk.CTkLabel(master=root,height=512, width=512)
 lmain.place(x=10, y=110)
 
 modelid = "CompVis/stable-diffusion-v1-4"
@@ -35,7 +36,7 @@ def generate():
     img = ImageTk.PhotoImage(image)
     lmain.configure(image=img) 
 
-trigger = ctk.CTkButton(height=40, width=120, text_font=("Arial", 20), text_color="white", fg_color="blue", command=generate) 
+trigger = ctk.CTkButton(master=root,height=40, width=120,  text_color="white", fg_color="blue", command=generate) 
 trigger.configure(text="Generate") 
 trigger.place(x=206, y=60) 
 
